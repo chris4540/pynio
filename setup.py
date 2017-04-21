@@ -109,7 +109,8 @@ def set_curl_libs():
 # End of set_curl_libs
 
 formats = {}
-LIB_MACROS        =  [ ('NeedFuncProto',None), ('NIO_LIB_ONLY' , None), ('_POSIX_SOURCE',None) ]
+# remove the flag "_POSIX_SOURCE" to build libsrc/FileSupport.c successfully 
+LIB_MACROS        =  [ ('NeedFuncProto',None), ('NIO_LIB_ONLY' , None) ]
 
 if sys.byteorder == 'little':
   LIB_MACROS.append(('ByteSwapped', None))
